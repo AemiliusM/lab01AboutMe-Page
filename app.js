@@ -41,7 +41,7 @@ quizButton.addEventListener('click', ()=>{
 
         console.log('score after checking ans2', score);
         
-        if (isYes(ans3)){
+        if (isNo(ans3)){
             score++;
         }
         console.log('score after checking ans3', score);
@@ -54,7 +54,7 @@ quizButton.addEventListener('click', ()=>{
 
         console.log('final score', score);
         
-        results.textContent = `${name} you got ${score} right!`;
+        alert(results.textContent = `${name} you got ${score} right!`); 
     } else {
         console.log('user cancelled');
     }

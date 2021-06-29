@@ -97,14 +97,18 @@ header img {
 
 p {
     margin: var(--gutter);
+    color: rgb(226, 240, 30);
 }
 #results {
     background-color: rgb(128, 128, 128, 0.6);
     color: rgb(226, 240, 30);
+    font-size: 1.5rem;
 }
 #click-me {
-    background-image: url('../assets/Sampson3.jpg');
-}  
+    height: 160px;
+    width: 200px;
+    border-radius: 60%;
+}
 
 footer {
     position: fixed;
