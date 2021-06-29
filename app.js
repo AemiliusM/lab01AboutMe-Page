@@ -10,22 +10,51 @@
 // console.log(confirmed);
 // const myName = prompt("what is your name?");
 // console.log(myName);
+import { isYes } from './utils.js';
+import { isNo } from './utils.js';
 const quizButton = document.getElementById('click-me');
-// const results = document.getElementById('results');
+const results = document.getElementById('results');
 
 quizButton.addEventListener('click', ()=>{
-    const confirmed = confirm('Would you like to start the quiz?');
-    if (confirmed) {
-        console.log('continue the quiz');
-        const name = prompt('what is your name?');
-        const ans1 = prompt('how do you like eggs');
-        const ans2 = prompt('are eggs great?');
-        const ans3 = prompt('what is your favorite egg?');
+    const confirmed = confirm('Would you like to start the quiz');
+    console.log(confirmed);
+    
+    if (confirmed){
+        const name = prompt('What is your name?');
+        const ans1 = prompt('Do I like waking up my parents?'); 
+        const ans2 = prompt('Do I throw up hair-balls and make weird noises?');
+        const ans3 = prompt('Do I like my brother?');
+        const ans4 = prompt('Do I like to be washed?');
         console.log(name, ans1, ans2, ans3);
-        let score =0;
-        if(ans2 === 'y' || ans2 === 'y' || ans2 === 'y' || ans2 === 'y' || ans2 === 'y' || ans2 === 'y' ) {
-          score ++;
+      
+        let score = 0;
+      
+      
+        if (isYes(ans1)) {
+            score++;
         }
+        console.log('score after checking ans1', score);
+
+        if (isYes(ans2)){
+            score++;
+        }
+
+        console.log('score after checking ans2', score);
+        
+        if (isYes(ans3)){
+            score++;
+        }
+        console.log('score after checking ans3', score);
+
+        if (isNo(ans4)) {
+            score++;
+        }
+        console.log('score after checking ans4', score);
+
+
+        console.log('final score', score);
+        
+        results.textContent = `${name} you got ${score} right!`;
     } else {
         console.log('user cancelled');
     }
