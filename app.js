@@ -54,7 +54,7 @@ quizButton.addEventListener('click', ()=>{
 
         console.log('final score', score);
         
-        alert(results.textContent = `${name} you got ${score} right!`); 
+        alert(results.textContent = `${name} you got ${Math.floor(score / 4 * 100)}% right!`); 
     } else {
         console.log('user cancelled');
     }
